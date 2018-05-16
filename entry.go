@@ -13,7 +13,7 @@ type asset struct {
 }
 
 type assmap struct {
-	Assets []asset `json:"assets"`
+	Assets []*asset `json:"assets"`
 }
 
 func (assmap *assmap) json() ([]byte, error) {
@@ -43,4 +43,8 @@ func (assmap *assmap) read(filepath string) error {
 		return error
 	}
 	return assmap.unjson(data)
+}
+
+func (assmap *assmap) append(asset *asset) {
+	assmap.Assets = append(assmap.Assets, asset)
 }
