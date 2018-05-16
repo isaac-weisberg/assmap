@@ -1,5 +1,6 @@
 GARBAGE=assmap \
-	debug \
+		debug \
+		.assmap \
 
 default: build run
 

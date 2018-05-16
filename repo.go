@@ -18,7 +18,13 @@ func mapperMain() error {
 }
 
 func mapperInitial() error {
-	return nil
+	var error error
+	var assmap *assmap
+	assmap, error = mapMake(".")
+	if error != nil {
+		return nil
+	}
+	return assmap.write(mapPath)
 }
 
 func mapperIncremental() error {
