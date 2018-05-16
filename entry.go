@@ -48,3 +48,12 @@ func (assmap *assmap) read(filepath string) error {
 func (assmap *assmap) append(asset *asset) {
 	assmap.Assets = append(assmap.Assets, asset)
 }
+
+func (assmap *assmap) assetAt(path string) *asset {
+	for _, asset := range assmap.Assets {
+		if asset.Path == path {
+			return asset
+		}
+	}
+	return nil
+}

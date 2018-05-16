@@ -28,5 +28,12 @@ func mapperInitial() error {
 }
 
 func mapperIncremental() error {
+	var error error
+	var localMap *assmap
+	error = localMap.read(mapPath)
+	if error != nil {
+		return error
+	}
+
 	return nil
 }
