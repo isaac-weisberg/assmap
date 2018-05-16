@@ -35,5 +35,15 @@ func mapperIncremental() error {
 		return error
 	}
 
+	var freshMap *assmap
+	freshMap, error = mapMake(".")
+	if error != nil {
+		return error
+	}
+
+	localMap.squashLocalAssmapAgainst(freshMap)
+
+	freshMap.write(mapPath)
+
 	return nil
 }

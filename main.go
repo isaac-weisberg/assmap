@@ -7,7 +7,7 @@ import (
 func main() {
 	error := mapperMain()
 	if error != nil {
-		fmt.Println(error)
+		fmt.Println("Error:", error)
 	}
 	fmt.Println("Doen.")
 }
