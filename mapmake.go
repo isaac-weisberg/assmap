@@ -28,6 +28,10 @@ func mapMake(rootDir string) (*assmap, error) {
 
 		var asset = &asset{}
 
+		if info.IsDir() {
+			return nil
+		}
+
 		asset.Path = path
 		asset.Version = 1
 		asset.Modification = info.ModTime()
